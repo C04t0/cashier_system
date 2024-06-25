@@ -1,0 +1,96 @@
+/* DEBUG AND DEVELOP */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COLOURS */
+body {
+    background-color: lightgray;
+}
+header {
+    background-color: hsl(360, 63%, 46%);
+    color: whitesmoke;
+}
+nav {
+    color: hsl(360, 63%, 46%)
+}
+.grid-item {
+    background-color: dodgerblue;
+    border: 1px solid #ddd;
+}
+.userid-select {
+    color: whitesmoke;
+}
+footer {
+    background-color: #343a40;
+    color: whitesmoke;
+}
+/* TYPOGRAPHIC */
+
+body {
+    font: 13px Futura, sans-serif;
+}
+/* IMAGES */
+
+/* STRUCTURE */
+body {
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    padding: 10px;
+    text-align: center;
+}
+header h1 {
+    margin-bottom: 0;
+}
+nav {
+    margin-top: 10px;
+}
+nav ul {
+    list-style-type: none;
+}
+nav li {
+    display:inline;
+    margin-right: 10px;
+}
+#middle {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+aside {
+    flex: 1;
+}
+.grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+.btn {
+    width: 100%;
+    height: 100%;
+}
+footer {
+    padding: 10px;
+    text-align: center;
+}

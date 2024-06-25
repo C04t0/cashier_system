@@ -1,0 +1,20 @@
+{% extends "default.twig" %}
+
+{% block title %}Waiter interface{%  endblock %}
+{% block header %}Waiter interface{%  endblock %}
+
+{%  block content %}
+    <div id="userOverview" class="grid-container">
+            {% for user in users %}
+                <div class="grid-item">
+                    <button type=submit value="{{ user.id }}" class="userid-select btn-primary" onclick="setSessionUserId({{ user.id }})">
+                        {{ user.id }} - {{ user.username }}
+                    </button>
+                </div>
+            {%  endfor %}
+    </div>
+{% endblock %}
+
+{% block message %}
+    <p>Please remember to log out after placing an order! (BIG RED BUTTON)</p>
+{% endblock %}

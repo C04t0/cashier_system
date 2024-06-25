@@ -1,0 +1,25 @@
+{% extends "default.twig" %}
+
+{% block title %}Order interface{%  endblock %}
+{% block header %}Table selection{%  endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div id="tableOverview" class="row">
+        {%  for table in tables %}
+        <button class="btn btn-primary btn-block" onclick="selectTable({{ table.id }})">
+            Table: {{ table.tableNumber }}
+            {%  for location in locations %}
+                {% if table.locationId is same as(location.id) %}
+                    Location: {{ location.name }}
+                {% endif %}
+            {%  endfor %}
+        </button>
+        {%  endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block message %}
+    <p>Please select a table to start taking orders.</p>
+{% endblock %}

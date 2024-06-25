@@ -1,0 +1,6 @@
+{
+    "require": {
+        "composer": "*",
+        "twig/twig": "^3.10"
+    }
+}

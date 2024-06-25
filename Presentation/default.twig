@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Home{% endblock %}</title>
+        <link rel="icon" href="img/icon.png">
+        <link rel="stylesheet" href="../Presentation/css/style.css" content="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" content="text/css">
+        <script src="../Presentation/scripts/set_user_session_id.js"></script>
+        <script src="../Presentation/scripts/set_table.js"></script>
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1>{% block header %}Restaurant system{%  endblock %}</h1>
+                <nav class="navbar-dark navbar-collapse">
+                    <ul>
+                        <li><a href="login.php">Manager login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="middle" class="middle">
+            <aside>
+            </aside>
+            <main class="justify-content-center">
+                {% block content %}
+                {%  endblock %}
+            </main>
+            <aside>
+            </aside>
+        </div>
+        <footer>
+            <div id="importantInfo" class="important">
+                {% block message %}
+                {% endblock %}
+            </div>
+        </footer>
+    </body>
+</html>
