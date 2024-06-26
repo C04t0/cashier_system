@@ -25,16 +25,24 @@
     $tableService = new TableService();
     $productService = new ProductService();
     $locationService = new LocationService();
+    $categoryService = new CategoryService();
 
     session_start();
 
     if (isset($_SESSION['user_id'])) {
         $user_role = $userService->getUser((int)$_SESSION['user_id'])->getRoleId();
-        if ($user_role == 2) {
+
+        if (!isset($_GET['tableNumber']) && $user_role == 2) {
             $tables = $tableService->getAll();
             $locations = $locationService->getAll();
             echo $twig->render('table_select.twig', ['tables'=>$tables, 'locations'=>$locations]);
+        } else {
+            $products = $productService->getAll();
+            $categories = $categoryService->getAll();
+            $table_number = $_GET['tableNumber'];
+            echo $twig->render('order-try-out.twig', ['products'=>$products, 'categories'=>$categories]);
         }
+
     } else {
         $userList = $userService->getWaiters(2);
         echo $twig->render('user_id_screen.twig', ['users'=>$userList]);

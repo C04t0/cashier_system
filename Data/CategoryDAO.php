@@ -25,4 +25,23 @@
 
             return $category;
         }
+        public function getAll(): ?array {
+            $list = array();
+            $dbConn = new DbConnection();
+            $dbh = $dbConn->getDbh();
+            $sql = 'select id, name, parent_id from categories';
+
+            $stmt = $dbh->query($sql);
+            $result = $stmt->fetchAll();
+
+            foreach($result as $row) {
+                $category = new Category((int)$row['id'], $row['name'], $row['parent_id'] !== null ? (int)$row['parent_id'] : null);
+                $list[] = $category;
+            }
+
+            $dbh = null;
+            $dbConn->__destruct();
+
+            return $list;
+        }
     }

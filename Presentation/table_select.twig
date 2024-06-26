@@ -7,7 +7,7 @@
 <div class="container mt-4">
     <div id="tableOverview" class="row">
         {%  for table in tables %}
-        <button class="btn btn-primary btn-block" onclick="selectTable({{ table.id }})">
+        <button class="btn btn-primary btn-block table-select" onclick="selectTable({{ table.id }})">
             Table: {{ table.tableNumber }}
             {%  for location in locations %}
                 {% if table.locationId is same as(location.id) %}

@@ -1,0 +1,51 @@
+{%  extends 'default.twig' %}
+
+{% block title %}Order try-out {% endblock %}
+{%  block header %}Order try-out {% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        {% for main_category in categories %}
+            {% if main_category.parent_id is null %}
+                <div class="category">
+                    <button class="btn btn-primary btn-block"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#main-category-{{ main_category.id }}"
+                            aria-expanded="false"
+                            aria-controls="main-category-{{ main_category.id }}">
+                        {{ main_category.name }}
+                    </button>
+                    <div class="collapse" id="main-category-{{ main_category.id }}">
+                        {% for sub_category in categories %}
+                            {% if sub_category.parent_id == main_category.id %}
+                                <div class="sub-category">
+                                    <button class="btn btn-secondary btn-block"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#sub-category-{{ sub_category.id }}"
+                                            aria-expanded="false"
+                                            aria-controls="sub-category-{{ sub_category.id }}">
+                                        {{ sub_category.name }}
+                                    </button>
+                                    <div class="collapse" id="sub-category-{{ sub_category.id }}">
+                                        {% for product in products %}
+                                            {% if product.category_id == sub_category.id %}
+                                                <div class="product">
+                                                    <button class="btn btn-outline-primary btn-block" onclick="addProductToOrder({{ product.id }})">{{ product.name }}</button>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block message %}
+{% endblock %}

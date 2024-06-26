@@ -36,10 +36,9 @@
             $dbh = $dbConn->getDbh();
             $sql = 'select id, category_id, name, price from products';
 
-            $stmt = $dbh->prepare($sql);
-            $stmt->execute();
-
+            $stmt = $dbh->query($sql);
             $result = $stmt->fetchAll();
+
             foreach ($result as $row) {
                 $product = new Product(
                     (int)$row['id'],

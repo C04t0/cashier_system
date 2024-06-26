@@ -1,4 +1,4 @@
-/* DEBUG AND DEVELOP */
+/* DEBUG, RESET AND DEVELOP */
 * {
     margin: 0;
     padding: 0;
@@ -16,8 +16,11 @@ header {
 nav {
     color: hsl(360, 63%, 46%)
 }
+#navbar-toggler {
+    background-color: hsl(360, 63%, 46%);
+}
 .grid-item {
-    background-color: dodgerblue;
+    background-color: #007bff;
     border: 1px solid #ddd;
 }
 .userid-select {
@@ -30,7 +33,7 @@ footer {
 /* TYPOGRAPHIC */
 
 body {
-    font: 13px Futura, sans-serif;
+    font: 16px Futura, sans-serif;
 }
 /* IMAGES */
 
@@ -51,12 +54,9 @@ header h1 {
 nav {
     margin-top: 10px;
 }
-nav ul {
-    list-style-type: none;
-}
-nav li {
-    display:inline;
-    margin-right: 10px;
+#hamburgerIcon {
+    width: 30px;
+    height: 30px;
 }
 #middle {
     flex: 1;
@@ -80,15 +80,26 @@ aside {
 }
 .grid-item {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 20px;
-    text-align: center;
+    text-align: left;
+
     border-radius: 20px;
+}
+.category {
+    margin-bottom: 1rem;
+}
+.sub-category {
+    padding-left: 1.5rem;
+}
+.product {
+    padding-left: 3rem;
 }
 .btn {
     width: 100%;
     height: 100%;
+
 }
 footer {
     padding: 10px;
