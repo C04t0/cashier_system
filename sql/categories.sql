@@ -1,0 +1,10 @@
+INSERT INTO cashier_system.categories (id, name, parent_id) VALUES (1, 'Drinks', null);
+INSERT INTO cashier_system.categories (id, name, parent_id) VALUES (2, 'Food', null);
+INSERT INTO cashier_system.categories (id, name, parent_id) VALUES (3, 'Alcoholic', 1);
+INSERT INTO cashier_system.categories (id, name, parent_id) VALUES (4, 'Non-alcoholic', 1);
+INSERT INTO cashier_system.categories (id, name, parent_id) VALUES (5, 'Appetizers', 2);
+INSERT INTO cashier_system.categories (id, name, parent_id) VALUES (6, 'Meat', 2);
+INSERT INTO cashier_system.categories (id, name, parent_id) VALUES (7, 'Fish', 2);
+INSERT INTO cashier_system.categories (id, name, parent_id) VALUES (8, 'Vegetarian', 2);
+INSERT INTO cashier_system.categories (id, name, parent_id) VALUES (9, 'Sides', 2);
+INSERT INTO cashier_system.categories (id, name, parent_id) VALUES (10, 'Sauces', 2);
